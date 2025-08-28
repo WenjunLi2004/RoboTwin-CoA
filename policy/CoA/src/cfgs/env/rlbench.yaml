@@ -1,0 +1,14 @@
+# @package _global_
+
+visual_observation_shape: [128, 128]
+
+env:
+  env_name: rlbench
+  task_name: reach_target
+  episode_length_decay_rate: 2
+  action_mode: END_EFFECTOR_POSE  
+  cameras: ["front", "overhead", "left_shoulder", "right_shoulder"]
+  renderer: opengl3
+  arm_max_velocity: 1.0
+  arm_max_acceleration: 4.0
+  episode_length: ${env.tasks.${env.task_name}.episode_length}
